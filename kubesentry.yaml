@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kube-sentry-daemon
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: kube-sentry
+  template:
+    metadata:
+      labels:
+        app: kube-sentry
+    spec:
+      hostNetwork: true
+      containers:
+        - name: kube-sentry-container
+          image: <docker_image_when_ready>
+          volumeMounts:
+            - name: proc
+              mountPath: /host/proc
+              readOnly: true
+            - name: sys
+              mountPath: /host/sys
+              readOnly: true
+      volumes:
+        - name: proc
+          hostPath:
+            path: /proc
+        - name: sys
+          hostPath:
+            path: /sys
