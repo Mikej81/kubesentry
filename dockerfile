@@ -8,6 +8,6 @@ ENV COMMUNITY_STRING=public
 COPY monitor.sh /monitor.sh
 RUN chmod +x /monitor.sh
 
-#CMD ["/monitor.sh"]
+CMD ["/monitor.sh"]
 
-CMD [ "sh" ]
+#CMD [ "sh" ]
