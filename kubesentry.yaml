@@ -15,7 +15,7 @@ spec:
       hostNetwork: true
       containers:
         - name: kube-sentry-container
-          image: <docker_image_when_ready>
+          image: ghcr.io/mikej81/kubesentry:latest
           volumeMounts:
             - name: proc
               mountPath: /host/proc
