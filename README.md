@@ -1,2 +1,2 @@
 # kubesentry
-kubernetes workload that monitors how metrics
+kubernetes workload that monitors host metrics
